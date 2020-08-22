@@ -1,0 +1,23 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212de;
+    color: white
+}
+
+h1 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-check {
+    margin: 10px;
+}
+
+.dropdown {
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+
+button {
+    margin-left: 12px;
+}
