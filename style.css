@@ -20,4 +20,10 @@ h1 {
 
 button {
     margin-left: 12px;
+    width: 20%;
+    height: 50px;
+}
+
+h3 {
+    margin-left: 12px;
 }
