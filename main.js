@@ -1,56 +1,75 @@
-function alertCheckbox() {
-  var grading = {};
+function generateGradings() {
+  var gradings = {};
   var elements = document.getElementById("services").elements;
   for (var i = 0; i < elements.length; i++) {
     element = elements[i];
     if (element.checked == true) {
       console.log(element.value);
-      var url = `https://tosdr.org/api/1/service/${element.value}.json`;
+      var service = element.value;
+      var url = `https://tosdr.org/api/1/service/${element.value}.json`;//typescript bro
       console.log(url);
       $.getJSON(url).done(function(data) {
-        var data = data;
         for (var i of Object.keys(data.pointsData)) {
           switch (data.pointsData[i].tosdr.point) {
             case "blocker":
-              grading[i] = -20;
+              gradings[i] = -20;
               break;
             case "bad":
-              grading[i] = -10;
+              gradings[i] = -10;
               break;
             case "neutral":
-              grading[i] = 0;
+              gradings[i] = 0;
               break;
             case "good":
-              grading[i] = 10;
+              gradings[i] = 10;
               break;
             default:
               break;
           }
         }
-        console.log(grading);
+        console.log(gradings);
+        getScore(gradings, service);
+        gradings = {};
       });
     }
   }
 }
 
-var grading = {
-  622: "bad",
-  645: "bad",
-  701: "bad",
-  706: "bad",
-  793: "bad",
-  829: "good",
-  902: "good",
-  1122: "bad",
-  1370: "neutral",
-  1582: "bad",
-  1591: "good",
-  5922: "bad",
-  5923: "bad",
-  5925: "neutral",
-  5926: "bad",
-  5927: "neutral",
-  5928: "neutral",
-  5929: "bad",
-  5930: "bad"
+/*var gradings = {
+  642: -10,
+  689: -10,
+  713: -10,
+  719: 10,
+  741: -10,
+  755: 10,
+  771: 0,
+  817: 10,
+  852: -10,
+  854: 10,
+  855: -10,
+  877: -10,
+  905: 0,
+  926: 10,
+  1012: -10,
+  1082: 0,
+  1092: -10,
+  1143: -10,
+  7822: 0
 };
+*/
+function getScore(gradings, service) {
+  var finalGrade = 10;
+  const values = Object.values(gradings);
+  for (var i = 0; i < Object.keys(gradings).length; i++) {
+    finalGrade += values[i];
+  }
+  console.log(finalGrade);
+  document.getElementById(
+    "standard"
+  ).innerHTML += `Your privacy score for ${service}: ${finalGrade}\n`;
+  finalGrade = 0;
+}
+
+function clearStuff() {
+  document.getElementById("standard").innerHTML = "";
+}
