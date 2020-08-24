@@ -1,33 +1,33 @@
 function generateGradings() {
   var gradings = {};
   var elements = document.getElementById("services").elements;
-  for (var i = 0; i < elements.length; i++) {
-    element = elements[i];
-    if (element.checked == true) {
-      console.log(element.value);
-      var service = element.value;
-      var url = `https://tosdr.org/api/1/service/${element.value}.json`;//typescript bro
+  for (let i of elements) {
+    if (i.checked == true) {
+      console.log(i.value);
+      let service = i.value;
+      var url = `https://tosdr.org/api/1/service/${service}.json`; //typescript bro
       console.log(url);
       $.getJSON(url).done(function(data) {
-        for (var i of Object.keys(data.pointsData)) {
-          switch (data.pointsData[i].tosdr.point) {
+        for (let x of Object.keys(data.pointsData)) {
+          switch (data.pointsData[x].tosdr.point) {
             case "blocker":
-              gradings[i] = -20;
+              gradings[x] = -20;
               break;
             case "bad":
-              gradings[i] = -10;
+              gradings[x] = -10;
               break;
             case "neutral":
-              gradings[i] = 0;
+              gradings[x] = 0;
               break;
             case "good":
-              gradings[i] = 10;
+              gradings[x] = 10;
               break;
             default:
               break;
           }
         }
         console.log(gradings);
+        console.log(service);
         getScore(gradings, service);
         gradings = {};
       });
@@ -60,13 +60,13 @@ function generateGradings() {
 function getScore(gradings, service) {
   var finalGrade = 10;
   const values = Object.values(gradings);
-  for (var i = 0; i < Object.keys(gradings).length; i++) {
-    finalGrade += values[i];
+  for (let y = 0; y < Object.keys(gradings).length; y++) {
+    finalGrade += values[y];
   }
   console.log(finalGrade);
   document.getElementById(
     "standard"
-  ).innerHTML += `Your privacy score for ${service}: ${finalGrade}\n`;
+  ).innerHTML += `Your privacy score for ${service}: ${finalGrade}<br>`;
   finalGrade = 0;
 }
 
