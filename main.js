@@ -1,4 +1,7 @@
+let all_grades = {};
+
 function generateGradings() {
+  reset();
   var gradings = {};
   var elements = document.getElementById("services").elements;
   for (let i of elements) {
@@ -30,6 +33,7 @@ function generateGradings() {
         console.log(service);
         getScore(gradings, service);
         gradings = {};
+        getAverage(all_grades);
       });
     }
   }
@@ -67,9 +71,22 @@ function getScore(gradings, service) {
   document.getElementById(
     "standard"
   ).innerHTML += `Your privacy score for ${service}: ${finalGrade}<br>`;
+  all_grades[service] = finalGrade;
+  console.log(all_grades); 
   finalGrade = 0;
 }
 
-function clearStuff() {
+function reset() {
   document.getElementById("standard").innerHTML = "";
+  document.getElementById("average").innerHTML = "";
+}
+
+function getAverage(obj) {
+  var avg = 0;
+  for (let a of Object.values(obj)) {
+    avg += a;
+  } 
+  avg = avg / Object.values(obj).length;
+  console.log(avg);
+  document.getElementById("average").innerHTML = `Your Privacy Score™ : ${Math.round(avg)}`;
 }
