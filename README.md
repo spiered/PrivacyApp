@@ -11,4 +11,4 @@ Roadmap: https://trello.com/b/CPzva9dm/privacyapp-roadmap
 
 Team:
 * [Daren Palmer](https://colleserre.github.io) - Head of project
-* [Adrien Dumont](https://neurones.dev) - Designated sucker
+* [Adrien Dumont](https://neurones.dev) - The guy who did the stuff I didn't know how to do and din't want to learn (css)
