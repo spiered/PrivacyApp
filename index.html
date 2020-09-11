@@ -23,23 +23,25 @@
     <!--jQuery -->
     <script type="text/javascript"
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <!--Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom -->
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap"
       rel="stylesheet">
-    <title>Privacy.io | Evaluate your online privacy</title>
+    <title>Privacy.io - Evaluate your online privacy</title>
   </head>
 
   <body>
 
-    <h1><u>Privacy.io - Evaluate your online privacy</u></h1>
+    <h1>Privacy.io</h1>
     <form id="services">
       <table>
         <thead>
           <tr>
-            <th colspan="100%"><h2>Select the services you often use then click the submit button below</h2></th>
+            <th colspan="100%"><h2 id="instructions">Select the services you often use then click the submit button below</h2></th>
           </tr>
         </thead>
         <tbody>
@@ -204,7 +206,8 @@
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="uber"
+                  <input class="form-check-input" type="checkbox"
+                    value="uber"
                     id="defaultCheck2">
                   <label class="form-check-label" for="defaultCheck2">
                     Uber
@@ -223,10 +226,9 @@
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox"
-                    value="amazon
-                    id="defaultCheck1">
-                  <label class="form-check-label" for="defaultCheck1">
+                  <input class="form-check-input" type="checkbox" value="amazon"
+                    id="defaultCheck2">
+                  <label class="form-check-label" for="defaultCheck2">
                     Amazon Prime Video
                   </label>
                 </div>
@@ -527,10 +529,10 @@
     </form>
 
 
-    <button class="btn btn-warning" onclick="generateGradings()">Submit</button>
-    <button class="btn btn-danger" onclick="reset()">Reset</button>
-    <h1 id="standard"></h1>
-    <h1 id="average"></h1>
+    <button class="btn btn-primary" onclick="generateGradings()">Submit</button>
+    <button class="btn btn-warning" onclick="reset()"><i class="fa fa-trash"></i></button>
+    <h2 id="standard"></h2>
+    <h2 id="average"></h2>
   </body>
 </html>
 

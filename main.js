@@ -39,28 +39,6 @@ function generateGradings() {
   }
 }
 
-/*var gradings = {
-  642: -10,
-  689: -10,
-  713: -10,
-  719: 10,
-  741: -10,
-  755: 10,
-  771: 0,
-  817: 10,
-  852: -10,
-  854: 10,
-  855: -10,
-  877: -10,
-  905: 0,
-  926: 10,
-  1012: -10,
-  1082: 0,
-  1092: -10,
-  1143: -10,
-  7822: 0
-};
-*/
 function getScore(gradings, service) {
   var finalGrade = 10;
   const values = Object.values(gradings);
