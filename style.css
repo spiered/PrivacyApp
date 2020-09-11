@@ -27,3 +27,20 @@ button {
 label {
   margin-left: 12px;
 }
+
+table {
+  width: 100%;
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+table, th, td {
+  border: 2px solid black;
+  text-align: center;
+}
+td {
+  width: 10%;
+}
+.sub-form-container {
+  text-align: left;
+}
