@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(#4854be, #b533ad);
+  background: linear-gradient(#61a5e6 60%, #d84237b0);
   color: black;
 }
 
@@ -51,7 +51,7 @@ td {
   text-align: left;
 }
 
-.btn-warning {
+.btn-danger {
   height: 60px;
   width: 60px;
   border-radius: 50%;
