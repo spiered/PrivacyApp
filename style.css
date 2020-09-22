@@ -1,5 +1,8 @@
 * {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -162,6 +165,13 @@ main.main div.form label {
     align-items: center;
     width: 120px;
     color: rgb(139, 139, 139)
+}
+
+#findings {
+    display: flex;
+    margin: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 #number_of_services {

@@ -107,16 +107,13 @@ const online_services = [
     "soundcloud"
 ]
 
-let good_research;
-
-function search(text) {
-    console.log(text);
-    good_research = [];
+function search(word) {
+    let goodResearch = []
     let good;
     for (let i = 0; i < online_services.length; i++) {
-        for (let e = 0; e < text.length; e++) {
-            if (online_services[i][e] == text[e]) {
-                if (e == (text.length - 1)) {
+        for (let e = 0; e < word.length; e++) {
+            if (online_services[i][e] == word[e]) {
+                if (e == (word.length - 1)) {
                     good = true;
                 } else {
                     continue;
@@ -127,12 +124,23 @@ function search(text) {
             }
         }
         if (good) {
-            good_research.push(online_services[i]);
+            goodResearch.push(online_services[i]);
         }
     }
-    document.getElementById("findings").innerText = "";
-    for (let a = 0; a < good_research.length; a++) {
-        document.getElementById("findings").innerText += `${good_research[a]}_`;
+
+    let nameOfClass,
+        svgCode,
+        fullElement,
+        parentFindingsElement;
+
+    parentFindingsElement = document.getElementById("findings");
+    parentFindingsElement.innerHTML = "";
+
+    for (let a = 0; a < goodResearch.length; a++) {
+        nameOfClass = goodResearch[a];
+        svgCode = document.getElementsByClassName(nameOfClass)[0].innerHTML;
+        fullElement = `<div class="${nameOfClass} svg-div hover-effect" onclick="select_div(this.className)">${svgCode}</div>`;
+        parentFindingsElement.innerHTML += fullElement;
     }
     document.getElementById("search-input").toggleAttribute("placeholder");
 }
