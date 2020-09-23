@@ -10,5 +10,5 @@ UX flow:
 Roadmap: https://trello.com/b/CPzva9dm/privacyapp-roadmap
 
 Team:
-* [Daren Palmer](https://colleserre.github.io) - Head of project
+* [Daren Palmer](https://colleserre.github.io) - Head of project & backend
 * [Adrien Dumont](https://neurones.dev) - User counting and website styling
