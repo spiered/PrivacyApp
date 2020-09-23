@@ -1,62 +1,385 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(#61a5e6 60%, #d84237b0);
-  color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+    background-color: #68b0ab81;
+    font-family: 'Poppins', sans-serif;
 }
 
-h1 {
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: 35px;
-  border: 3px solid black;
-  padding: 12px;
-  width: 50%;
+img {
+    height: 175px;
 }
 
-.form-check {
-  margin: 10px;
+.title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+    color: #333333;
+    letter-spacing: 1.5px;
 }
 
-.dropdown {
-  margin-bottom: 12px;
-  margin-left: 12px;
+main.main {
+    width: 70%;
+    border-radius: 10px;
+}
+
+header {
+    border-radius: 10px;
+}
+
+hr {
+    border-top: 0.25px solid rgb(182, 181, 181);
+    height: 0;
+    background: none;
+    border-radius: 0;
+}
+
+#response {
+    background-color: rgb(233, 233, 233);
+    border: none;
+}
+
+header nav {
+    border-radius: 10px;
+}
+
+div.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+div.form div {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+div.form div input.input {
+    padding: 0.5vmin;
+    border: 2px solid #F1F3F4;
+    border-radius: 500px;
+    background-color: #F1F3F4;
+    width: 100%;
+    padding-left: 40px;
+    font-size: 13px;
+    outline: none;
+    transition: .3s background-color, .3s border;
+}
+
+div.form div input.input:hover {
+    background-color: #e1e3e4;
+    border: 2px solid #e1e3e4;
+}
+
+div.form div input.input:focus {
+    background-color: rgb(255, 251, 251);
+    border: 2px solid rgb(157, 185, 230);
+}
+
+div.form div input.input:focus+i {
+    color: rgb(216, 216, 216);
+}
+
+div.form div i {
+    margin-left: 15px;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    color: rgb(179, 179, 179);
+    border-radius: 10px;
+    padding: 5px;
+    transition: .3s background-color, .3s color;
+    cursor: pointer;
+}
+
+div.form div i:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+i.goodbye {
+    display: none;
+    color: red;
+}
+
+main.main div.form label {
+    font-size: 12px;
+    color: #525252;
+}
+
+.tab {
+    margin-top: 2rem;
+    box-shadow: 0px 0px 20px 2px #68b0ab;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+    border-radius: 10px;
+}
+
+.tab .header {
+    background-color: rgb(232, 228, 234);
+    border: none;
+    border-radius: 10px;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dotrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 115px;
+}
+
+.services-selected {
+    margin-right: 20px;
+}
+
+.services-selected p {
+    font-size: 12px;
+    font-weight: 200;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    color: rgb(139, 139, 139)
+}
+
+#number_of_services {
+    font-weight: 400;
+    margin-left: 2px;
+    color: rgb(141, 141, 141);
+}
+
+#services_selected {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#services_selected div div {
+    margin: 0 20px 15px 20px;
+    transition: .3s all;
+}
+
+.dot {
+    height: 12.5px;
+    width: 12.5px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 100%;
+    margin: 8px 4px;
+    cursor: pointer;
+}
+
+.dot:nth-child(1) {
+    margin-left: 20px;
+}
+
+.red {
+    background-color: rgb(219, 96, 93);
+}
+
+.yellow {
+    background-color: rgb(234, 193, 67);
+}
+
+.green {
+    background-color: rgb(115, 206, 54);
+}
+
+.tab .main {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 0px 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+h3 {
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: rgb(78, 78, 78);
+}
+
+.services {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+svg {
+    height: 25px;
+    background-color: transparent;
+}
+
+.hover-effect:hover {
+    background-color: rgb(224, 224, 224);
+    border: 2px solid rgb(224, 224, 224);
+}
+
+.section:last-child {
+    margin-bottom: 60px;
+}
+
+svg.snapchat {
+    fill: #FFFC00;
+}
+
+svg.google {
+    fill: #4285F4;
+}
+
+svg.facebook {
+    fill: #1877F2;
+}
+
+svg.apple {
+    fill: #999999;
 }
 
 button {
-  margin-left: 12px;
-  width: 20%;
-  height: 50px;
+    padding: 1vmin;
+    border: none;
+    border-radius: 10px;
+    border-top: none;
+    cursor: pointer;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #407088c0;
+    transition: all 0.5s;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 200;
+    text-align: center;
+    outline: none;
+    /* box-shadow: 0px 3px 0px 0px rgba(173, 173, 173, 0.75); */
 }
 
-label {
-  margin-left: 12px;
+button:hover {
+    background-color: #407088;
 }
 
-table {
-  margin: 8px;
-  margin-bottom: 50px;
+.svg-div {
+    padding: 15px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 50%;
+    border: 2px solid rgb(238, 238, 238);
+    transition: .2s border ease-in-out, .2s background-color ease-in-out, .2s box-shadow ease-in-out;
+    cursor: pointer;
 }
 
-table,
-th,
-td {
-  border: 3px solid black;
-  text-align: center;
-}
-td {
-  width: 10%;
-}
-.sub-form-container {
-  text-align: left;
+.selected {
+    border: 2px solid rgb(157, 185, 230);
+    background-color: rgb(230, 230, 255);
+    box-shadow: 0px 3px 4px 0px rgba(176, 189, 221, 0.692);
 }
 
-.btn-danger {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
+.brand-name {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(139, 139, 139);
 }
 
-#instructions {
-  margin: 20px;
+svg#google {
+    fill: #4285F4;
+}
+
+svg#discord {
+    fill: #7289DA;
+}
+
+svg#apple {
+    fill: #999999;
+}
+
+svg#facebook {
+    fill: #1877F2;
+}
+
+svg#paypal {
+    fill: #00457C;
+}
+
+svg#evernote {
+    fill: #00A82D;
+}
+
+svg#lastpass {
+    fill: #D32D27;
+}
+
+svg#todoist {
+    fill: #E44332;
+}
+
+svg#skype {
+    fill: #00AFF0;
+}
+
+svg#googlehangouts {
+    fill: #0C9D58;
+}
+
+svg#zoom {
+    fill: #0E8EE9;
+}
+
+svg#teamviewer {
+    fill: #7289DA;
+}
+
+svg#wikipedia {
+    fill: #000000;
+}
+
+svg#coursera {
+    fill: #2A73CC;
+}
+
+svg#khanacademy {
+    fill: #14BF96;
+}
+
+svg#academia {
+    fill: #41454A;
+}
+
+svg#deezer {
+    fill: #FEAA2D;
+}
+
+svg#lastdotfm {
+    fill: #D51007;
+}
+
+svg#spotify {
+    fill: #1ED760;
+}
+
+svg#soundcloud {
+    fill: #FF3300;
 }
