@@ -1,4 +1,4 @@
-let services_selected = []
+let services_selected = [];
 
 // function select(id) {
 //     let element = document.getElementById(id);
@@ -16,8 +16,8 @@ let services_selected = []
 // }
 
 function select_div(classe) {
-    let className = classe.split(' ')[0];
-    console.log(document.getElementsByClassName(classe).length)
+    let className = classe.split(" ")[0];
+    console.log(document.getElementsByClassName(classe).length);
     if (services_selected.includes(className)) {
         for (let i = 0; i < services_selected.length; i++) {
             if (services_selected[i] === className) {
@@ -25,24 +25,29 @@ function select_div(classe) {
             }
         }
     } else {
-        services_selected.push(className)
+        services_selected.push(className);
     }
-    document.getElementById("number_of_services").innerText = services_selected.length;
+    document.getElementById("number_of_services").innerText =
+        services_selected.length;
 
     let element_service;
     let element_add;
     let div_element;
-    document.getElementById("services_selected").innerHTML = ""
+    document.getElementById("services_selected").innerHTML = "";
     for (let i = 0; i < services_selected.length; i++) {
         element_service = document.getElementById(services_selected[i]).innerHTML;
-        element_service.id == services_selected[i] + "2"
-        console.log(element_service)
+        element_service.id == services_selected[i] + "2";
+        console.log(element_service);
         div_element = document.createElement("div");
 
-        element_add = `<div onclick="deselect(this.className)" class="${services_selected[i]} svg-div selected"><svg class="" id="${services_selected[i]}" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${element_service}</svg></div>`
+        element_add = `<div onclick="deselect(this.className)" class="${services_selected[
+      i
+    ]} svg-div selected"><svg class="" id="${services_selected[
+      i
+    ]}" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${element_service}</svg></div>`;
         div_element.innerHTML += element_add;
         document.getElementById("services_selected").appendChild(div_element);
-        console.log(services_selected.length)
+        console.log(services_selected.length);
     }
     let element;
     if (document.getElementsByClassName(classe).length > 1) {
@@ -55,7 +60,7 @@ function select_div(classe) {
 }
 
 function deselect(classe) {
-    let className = classe.split(' ')[0];
+    let className = classe.split(" ")[0];
     if (services_selected.includes(className)) {
         for (let i = 0; i < services_selected.length; i++) {
             if (services_selected[i] === className) {
@@ -65,22 +70,26 @@ function deselect(classe) {
         let element_service;
         let element_add;
         let div_element;
-        document.getElementById("services_selected").innerHTML = ""
+        document.getElementById("services_selected").innerHTML = "";
         for (let i = 0; i < services_selected.length; i++) {
             element_service = document.getElementById(services_selected[i]).innerHTML;
-            element_service.id == services_selected[i] + "2"
-            console.log(element_service)
+            element_service.id == services_selected[i] + "2";
             div_element = document.createElement("div");
 
-            element_add = `<div onclick="deselect(this.className)" class="${services_selected[i]} svg-div selected"><svg class="" id="${services_selected[i]}" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${element_service}</svg></div>`
+            element_add = `<div onclick="deselect(this.className)" class="${services_selected[
+        i
+      ]} svg-div selected"><svg class="" id="${services_selected[
+        i
+      ]}" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${element_service}</svg></div>`;
             div_element.innerHTML += element_add;
             document.getElementById("services_selected").appendChild(div_element);
-            console.log(services_selected.length)
+            console.log(services_selected.length);
         }
         element = document.getElementsByClassName(classe)[0];
         element.classList.toggle("selected");
         element.classList.toggle("hover-effect");
-        document.getElementById("number_of_services").innerText = services_selected.length;
+        document.getElementById("number_of_services").innerText =
+            services_selected.length;
     }
 }
 
@@ -105,7 +114,7 @@ const online_services = [
     "last.fm",
     "spotify",
     "soundcloud"
-]
+];
 
 let good_research;
 
@@ -116,7 +125,7 @@ function search(text) {
     for (let i = 0; i < online_services.length; i++) {
         for (let e = 0; e < text.length; e++) {
             if (online_services[i][e] == text[e]) {
-                if (e == (text.length - 1)) {
+                if (e == text.length - 1) {
                     good = true;
                 } else {
                     continue;
@@ -137,6 +146,7 @@ function search(text) {
     document.getElementById("search-input").toggleAttribute("placeholder");
 }
 
+let all_grades = {};
 
 function generateGradings() {
     document.getElementById("response").innerHTML = "";
@@ -163,7 +173,7 @@ function generateGradings() {
                         gradings[s] = -10;
                         break;
                     case "neutral":
-                        gradings[s] = 0;
+                        gradings[s] = 5;
                         break;
                     case "good":
                         gradings[s] = 10;
@@ -172,30 +182,53 @@ function generateGradings() {
                         break;
                 }
             }
-            console.log(sites[i])
+            console.log(sites[i]);
             getScore(gradings, sites[i], data);
             gradings = {};
+            getAverage(all_grades);
         });
     }
 }
 
 function getScore(gradings, service, data) {
     console.log(service);
-    var finalGrade = 10;
+    var finalGrade = 20;
     const values = Object.values(gradings);
     for (let i = 0; i < Object.keys(gradings).length; i++) {
         finalGrade += values[i];
     }
-    var para = document.createElement("p");
-    var node = document.createTextNode(`Your privacy score for ${service}: ${finalGrade}\n`);
-    para.appendChild(node);
-
-    var parentElement = document.getElementById("response");
-    parentElement.appendChild(para);
-    console.log(services_selected)
+    //var para = document.createElement("p");
+    //var node = document.createTextNode(
+    //    `Your privacy score for ${service}: ${finalGrade}\n`
+    //);
+    //para.appendChild(node);
+    //var parentElement = document.getElementById("response");
+    //parentElement.appendChild(para);
+    console.log(services_selected);
+    all_grades[service] = finalGrade;
     finalGrade = 0;
 }
 
-function clearStuff() {
-    document.getElementById("response").innerHTML = "";
+function getAverage(obj) {
+    console.log(obj);
+    var avg = 0;
+    for (let a of Object.values(obj)) {
+        avg += a;
+    }
+    console.log("AVG ", avg);
+    avg = avg / Object.values(obj).length;
+    console.log(avg);
+    if (avg > 20) {
+        document.getElementById(
+            "average"
+        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)} | This is a great score!`;
+    } else if (avg < -30) {
+        document.getElementById(
+            "average"
+        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)} | This is a concerning score...`;
+    } else {
+        document.getElementById(
+            "average"
+        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)}`;
+    }
 }

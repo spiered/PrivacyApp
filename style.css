@@ -223,6 +223,13 @@ h3 {
     color: rgb(78, 78, 78);
 }
 
+h2 {
+    margin-left: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+}
+
 .services {
     display: flex;
     flex-direction: row;
@@ -308,8 +315,8 @@ svg#google {
     fill: #4285F4;
 }
 
-svg#discord {
-    fill: #7289DA;
+svg#amazon {
+    fill: #FF9900;
 }
 
 svg#apple {
@@ -320,12 +327,36 @@ svg#facebook {
     fill: #1877F2;
 }
 
+svg#instagram {
+    fill: #5851DB;
+}
+
+svg#snapchat {
+    fill: #FFFC00;
+}
+
+svg#twitter {
+    fill: #1DA1F2;
+}
+
+svg#tinder {
+    fill: #FE3C72;
+}
+
 svg#paypal {
     fill: #00457C;
 }
 
+svg#microsoft {
+    fill: #ef4c00;
+}
+
 svg#evernote {
     fill: #00A82D;
+}
+
+svg#trello {
+    fill: #0079BF;
 }
 
 svg#lastpass {
@@ -340,32 +371,36 @@ svg#skype {
     fill: #00AFF0;
 }
 
-svg#googlehangouts {
-    fill: #0C9D58;
+svg#mozilla-org {
+    fill: #FF7139;
 }
 
-svg#zoom {
-    fill: #0E8EE9;
+svg#twitch {
+    fill: #9146FF;
 }
 
-svg#teamviewer {
+svg#reddit {
+    fill: #FF4500;
+}
+
+svg#netflix {
+    fill: #E50914;
+}
+
+svg#cnn {
+    fill: #CC0000;
+}
+
+svg#crunchyroll {
+    fill: #F47521;
+}
+
+svg#discord {
     fill: #7289DA;
 }
 
-svg#wikipedia {
-    fill: #000000;
-}
-
-svg#coursera {
-    fill: #2A73CC;
-}
-
-svg#khanacademy {
-    fill: #14BF96;
-}
-
-svg#academia {
-    fill: #41454A;
+svg#hulu {
+    fill: #3DBB3D;
 }
 
 svg#deezer {
