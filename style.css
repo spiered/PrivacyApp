@@ -6,12 +6,6 @@ div.svg-div {
     flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 650px) {
-    main.main {
-        width: 95%;
-    }
-}
-
 * {
     font-family: 'Poppins', sans-serif;
 }
@@ -84,9 +78,9 @@ div.form div {
 
 div.form div input.input {
     padding: 0.5vmin;
-    border: 2px solid #F1F3F4;
+    border: 2px solid #f1f3f4;
     border-radius: 500px;
-    background-color: #F1F3F4;
+    background-color: #f1f3f4;
     width: 100%;
     padding-left: 40px;
     font-size: 13px;
@@ -175,7 +169,7 @@ main.main div.form label {
     justify-content: space-between;
     align-items: center;
     width: 120px;
-    color: rgb(139, 139, 139)
+    color: rgb(139, 139, 139);
 }
 
 #number_of_services {
@@ -266,15 +260,15 @@ svg {
 }
 
 svg.snapchat {
-    fill: #FFFC00;
+    fill: #fffc00;
 }
 
 svg.google {
-    fill: #4285F4;
+    fill: #4285f4;
 }
 
 svg.facebook {
-    fill: #1877F2;
+    fill: #1877f2;
 }
 
 svg.apple {
@@ -326,11 +320,11 @@ button:hover {
 }
 
 svg#google {
-    fill: #4285F4;
+    fill: #4285f4;
 }
 
 svg#amazon {
-    fill: #FF9900;
+    fill: #ff9900;
 }
 
 svg#apple {
@@ -338,27 +332,27 @@ svg#apple {
 }
 
 svg#facebook {
-    fill: #1877F2;
+    fill: #1877f2;
 }
 
 svg#instagram {
-    fill: #5851DB;
+    fill: #5851db;
 }
 
 svg#snapchat {
-    fill: #FFFC00;
+    fill: #fffc00;
 }
 
 svg#twitter {
-    fill: #1DA1F2;
+    fill: #1da1f2;
 }
 
 svg#tinder {
-    fill: #FE3C72;
+    fill: #fe3c72;
 }
 
 svg#paypal {
-    fill: #00457C;
+    fill: #00457c;
 }
 
 svg#microsoft {
@@ -366,69 +360,75 @@ svg#microsoft {
 }
 
 svg#evernote {
-    fill: #00A82D;
+    fill: #00a82d;
 }
 
 svg#trello {
-    fill: #0079BF;
+    fill: #0079bf;
 }
 
 svg#lastpass {
-    fill: #D32D27;
+    fill: #d32d27;
 }
 
 svg#todoist {
-    fill: #E44332;
+    fill: #e44332;
 }
 
 svg#skype {
-    fill: #00AFF0;
+    fill: #00aff0;
 }
 
 svg#mozilla-org {
-    fill: #FF7139;
+    fill: #ff7139;
 }
 
 svg#twitch {
-    fill: #9146FF;
+    fill: #9146ff;
 }
 
 svg#reddit {
-    fill: #FF4500;
+    fill: #ff4500;
 }
 
 svg#netflix {
-    fill: #E50914;
+    fill: #e50914;
 }
 
 svg#cnn {
-    fill: #CC0000;
+    fill: #cc0000;
 }
 
 svg#crunchyroll {
-    fill: #F47521;
+    fill: #f47521;
 }
 
 svg#discord {
-    fill: #7289DA;
+    fill: #7289da;
 }
 
 svg#hulu {
-    fill: #3DBB3D;
+    fill: #3dbb3d;
 }
 
 svg#deezer {
-    fill: #FEAA2D;
+    fill: #feaa2d;
 }
 
 svg#lastdotfm {
-    fill: #D51007;
+    fill: #d51007;
 }
 
 svg#spotify {
-    fill: #1ED760;
+    fill: #1ed760;
 }
 
 svg#soundcloud {
-    fill: #FF3300;
+    fill: #ff3300;
+}
+
+@media only screen and (max-width: 650px) {
+    main.main {
+        width: 95%;
+    }
 }
