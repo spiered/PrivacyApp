@@ -229,6 +229,6 @@ function getAverage(obj) {
     } else {
         document.getElementById(
             "average"
-        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)}`;
+        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)} | This is an average score but you should still be careful!`;
     }
 }
