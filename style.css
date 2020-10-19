@@ -445,3 +445,8 @@ svg#soundcloud {
         width: 95%;
     }
 }
+
+.about {
+    font-weight: 400;
+    margin: 20px;
+}

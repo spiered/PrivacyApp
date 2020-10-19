@@ -1,5 +1,5 @@
 let services_selected = [];
-
+let count = 0;
 // function select(id) {
 //     let element = document.getElementById(id);
 //     element.parentNode.classList.toggle("selected");
@@ -144,15 +144,15 @@ function search(text) {
 let all_grades = {};
 
 function generateGradings() {
-    document.getElementById("response").innerHTML = "";
+    //document.getElementById("response").innerHTML = "";
     var gradings = {};
     var elements = services_selected;
     var sites = [];
-    if (services_selected == 0) {
-        document.getElementById("response").style.padding = 0;
-    } else {
-        document.getElementById("response").style.padding = "20px";
-    }
+    //if (services_selected == 0) {
+    //    document.getElementById("response").style.padding = 0;
+    //} else {
+    //    document.getElementById("response").style.padding = "20px";
+    //}
     for (let i = 0; i < elements.length; i++) {
         element = elements[i];
         var service = element;
@@ -162,16 +162,16 @@ function generateGradings() {
             for (let s of Object.keys(data.pointsData)) {
                 switch (data.pointsData[s].tosdr.point) {
                     case "blocker":
-                        gradings[s] = 0;
+                        gradings[s] = -10;
                         break;
                     case "bad":
-                        gradings[s] = 5;
+                        gradings[s] = -5;
                         break;
                     case "neutral":
-                        gradings[s] = 10;
+                        gradings[s] = 0;
                         break;
                     case "good":
-                        gradings[s] = 20;
+                        gradings[s] = 5;
                         break;
                     default:
                         break;
@@ -193,6 +193,8 @@ function getScore(gradings, service, data) {
     }
     all_grades[service] = finalGrade;
     finalGrade = 0;
+    console.log(values.length);
+    count += values.length;
 }
 
 function getAverage(obj) {
@@ -201,25 +203,26 @@ function getAverage(obj) {
         avg += a;
     }
     avg = avg / Object.values(obj).length;
-    if (avg > 60) {
-        document.getElementById(
-            "response"
-        ).innerHTML = `Your Privacy Score™ : ${Math.round(
-      avg
-    )}<br>This is a great score!`;
-    } else if (avg < 40) {
-        document.getElementById(
-            "response"
-        ).innerHTML = `Your Privacy Score™ : ${Math.round(
-      avg
-    )}<br>This is a concerning score...`;
-    } else {
-        document.getElementById(
-            "response"
-        ).innerHTML = `Your Privacy Score™ : ${Math.round(
-      avg
-    )}<br>This is an average score but you should still be careful!`;
-    }
+    console.log(avg);
+    //if (avg > 60) {
+    //    document.getElementById(
+    //        "response"
+    //    ).innerHTML = `Your Privacy Score™ : ${Math.round(
+    //  avg
+    //)}<br>This is a great score!`;
+    //} else if (avg < 40) {
+    //    document.getElementById(
+    //        "response"
+    //    ).innerHTML = `Your Privacy Score™ : ${Math.round(
+    //  avg
+    //)}<br>This is a concerning score...`;
+    //} else {
+    //    document.getElementById(
+    //        "response"
+    //    ).innerHTML = `Your Privacy Score™ : ${Math.round(
+    //  avg
+    //)}<br>This is an average score but you should still be careful!`;
+    //}
 
     var data = [{
         y: Object.values(all_grades),
@@ -234,5 +237,4 @@ function getAverage(obj) {
     };
 
     Plotly.newPlot("myDiv", data, layout);
-
 }
