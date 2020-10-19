@@ -222,14 +222,14 @@ function getAverage(obj) {
     }
 
     var data = [{
-        values: Object.values(all_grades),
-        labels: Object.keys(all_grades),
-        type: "pie"
+        y: Object.values(all_grades),
+        x: Object.keys(all_grades),
+        type: "bar"
     }];
 
     var layout = {
         title: {
-            text: "Which service has the highest impact<br>on your Privacy Score™ (higher is better)",
+            text: "Which service has the best privacy practices? (higher is better)",
         },
     };
 
