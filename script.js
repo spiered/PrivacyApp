@@ -203,19 +203,19 @@ function getAverage(obj) {
     avg = avg / Object.values(obj).length;
     if (avg > 60) {
         document.getElementById(
-            "average"
+            "response"
         ).innerHTML = `Your Privacy Score™ : ${Math.round(
       avg
     )}<br>This is a great score!`;
     } else if (avg < 40) {
         document.getElementById(
-            "average"
+            "response"
         ).innerHTML = `Your Privacy Score™ : ${Math.round(
       avg
     )}<br>This is a concerning score...`;
     } else {
         document.getElementById(
-            "average"
+            "response"
         ).innerHTML = `Your Privacy Score™ : ${Math.round(
       avg
     )}<br>This is an average score but you should still be careful!`;
