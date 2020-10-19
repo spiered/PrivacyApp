@@ -17,7 +17,6 @@ let services_selected = [];
 
 function select_div(classe) {
     let className = classe.split(" ")[0];
-    console.log(document.getElementsByClassName(classe).length);
     if (services_selected.includes(className)) {
         for (let i = 0; i < services_selected.length; i++) {
             if (services_selected[i] === className) {
@@ -37,7 +36,6 @@ function select_div(classe) {
     for (let i = 0; i < services_selected.length; i++) {
         element_service = document.getElementById(services_selected[i]).innerHTML;
         element_service.id == services_selected[i] + "2";
-        console.log(element_service);
         div_element = document.createElement("div");
 
         element_add = `<div onclick="deselect(this.className)" class="${services_selected[
@@ -47,7 +45,6 @@ function select_div(classe) {
     ]}" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${element_service}</svg></div>`;
         div_element.innerHTML += element_add;
         document.getElementById("services_selected").appendChild(div_element);
-        console.log(services_selected.length);
     }
     let element;
     if (document.getElementsByClassName(classe).length > 1) {
@@ -83,7 +80,6 @@ function deselect(classe) {
       ]}" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${element_service}</svg></div>`;
             div_element.innerHTML += element_add;
             document.getElementById("services_selected").appendChild(div_element);
-            console.log(services_selected.length);
         }
         element = document.getElementsByClassName(classe)[0];
         element.classList.toggle("selected");
@@ -119,7 +115,6 @@ const online_services = [
 let good_research;
 
 function search(text) {
-    console.log(text);
     good_research = [];
     let good;
     for (let i = 0; i < online_services.length; i++) {
@@ -167,16 +162,16 @@ function generateGradings() {
             for (let s of Object.keys(data.pointsData)) {
                 switch (data.pointsData[s].tosdr.point) {
                     case "blocker":
-                        gradings[s] = -20;
+                        gradings[s] = 0;
                         break;
                     case "bad":
-                        gradings[s] = -10;
-                        break;
-                    case "neutral":
                         gradings[s] = 5;
                         break;
-                    case "good":
+                    case "neutral":
                         gradings[s] = 10;
+                        break;
+                    case "good":
+                        gradings[s] = 20;
                         break;
                     default:
                         break;
@@ -191,44 +186,53 @@ function generateGradings() {
 }
 
 function getScore(gradings, service, data) {
-    console.log(service);
     var finalGrade = 20;
     const values = Object.values(gradings);
     for (let i = 0; i < Object.keys(gradings).length; i++) {
         finalGrade += values[i];
     }
-    //var para = document.createElement("p");
-    //var node = document.createTextNode(
-    //    `Your privacy score for ${service}: ${finalGrade}\n`
-    //);
-    //para.appendChild(node);
-    //var parentElement = document.getElementById("response");
-    //parentElement.appendChild(para);
-    console.log(services_selected);
     all_grades[service] = finalGrade;
     finalGrade = 0;
 }
 
 function getAverage(obj) {
-    console.log(obj);
     var avg = 0;
     for (let a of Object.values(obj)) {
         avg += a;
     }
-    console.log("AVG ", avg);
     avg = avg / Object.values(obj).length;
-    console.log(avg);
-    if (avg > 20) {
+    if (avg > 60) {
         document.getElementById(
-            "average"
-        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)} | This is a great score!`;
-    } else if (avg < -30) {
+            "response"
+        ).innerHTML = `Your Privacy Score™ : ${Math.round(
+      avg
+    )}<br>This is a great score!`;
+    } else if (avg < 40) {
         document.getElementById(
-            "average"
-        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)} | This is a concerning score...`;
+            "response"
+        ).innerHTML = `Your Privacy Score™ : ${Math.round(
+      avg
+    )}<br>This is a concerning score...`;
     } else {
         document.getElementById(
-            "average"
-        ).innerHTML = `Your Privacy Score™ : ${Math.round(avg)} | This is an average score but you should still be careful!`;
+            "response"
+        ).innerHTML = `Your Privacy Score™ : ${Math.round(
+      avg
+    )}<br>This is an average score but you should still be careful!`;
     }
+
+    var data = [{
+        values: Object.values(all_grades),
+        labels: Object.keys(all_grades),
+        type: "pie"
+    }];
+
+    var layout = {
+        title: {
+            text: "Which service has the highest impact<br>on your Privacy Score™ (higher is better)",
+        },
+    };
+
+    Plotly.newPlot("myDiv", data, layout);
+
 }

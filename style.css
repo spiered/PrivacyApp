@@ -250,7 +250,7 @@ h2 {
     justify-content: space-between;
 }
 
-svg {
+div.svg-div svg {
     height: 25px;
     background-color: transparent;
 }
@@ -432,8 +432,16 @@ svg#soundcloud {
     fill: #ff3300;
 }
 
+#myDiv {
+    width: 70%;
+    box-shadow: 0px 0px 20px 2px #68b0ab;
+}
+
 @media only screen and (max-width: 650px) {
     main.main {
+        width: 95%;
+    }
+    #myDiv {
         width: 95%;
     }
 }
