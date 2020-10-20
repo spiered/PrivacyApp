@@ -464,8 +464,14 @@ svg#apple2 {
     }
 }
 
+
 @media only screen and (max-width: 375px) {
     .title {
         font-size: 28px;
     }
+
+.about {
+    font-weight: 400;
+    margin: 20px;
+  }
 }
