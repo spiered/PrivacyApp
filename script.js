@@ -237,4 +237,5 @@ function getAverage(obj) {
     };
 
     Plotly.newPlot("myDiv", data, layout);
+
 }
