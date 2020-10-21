@@ -130,6 +130,12 @@ function search(text) {
 let all_grades = {};
 
 function generateGradings() {
+    for (let z = 0; z <= services_selected.length; z++) {
+        if (services_selected[z] === "itunes") {
+            let index = services_selected.indexOf("itunes");
+            services_selected.splice(index, 1);
+        }
+    }
     var gradings = {};
     var elements = services_selected;
     var sites = [];

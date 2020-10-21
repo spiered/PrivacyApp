@@ -1,0 +1,90 @@
+section.popup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 70%;
+    padding: 50px 75px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0px 0px 20px 2px #68b0ab;
+}
+
+section.popup svg {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+section.popup div {
+    width: 60%;
+}
+
+section.popup div p {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 200;
+}
+
+section.popup div span {
+    width: 100%;
+    color: rgb(136, 136, 136);
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+section.popup div a {
+    font-weight: 400;
+    opacity: 0.95
+}
+
+@media only screen and (max-width:1300px) {
+    section.popup div p {
+        font-size: 1.5rem;
+        margin-top: 10px
+    }
+    section.popup svg {
+        width: 200px;
+    }
+    section.popup div span {
+        font-size: 0.85rem;
+    }
+    section.popup div a {
+        font-size: 0.85rem;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    section.popup {
+        padding: 35px 50px;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    section.popup div {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    section.popup {
+        width: 95%;
+        padding: 25px 37.5px;
+    }
+    section.popup div p {
+        font-size: 1rem;
+        margin-top: 10px;
+        text-align: center;
+    }
+    section.popup svg {
+        width: 100px;
+    }
+    section.popup div span {
+        display: none;
+    }
+    section.popup div a {
+        font-size: 0.6rem;
+        margin-top: 2rem;
+    }
+}

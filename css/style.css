@@ -232,22 +232,6 @@ div.svg-div svg {
     margin-bottom: 60px;
 }
 
-svg.snapchat {
-    fill: #fffc00;
-}
-
-svg.google {
-    fill: #4285f4;
-}
-
-svg.facebook {
-    fill: #1877f2;
-}
-
-svg.apple {
-    fill: #999999;
-}
-
 button {
     padding: 1vmin;
     border: none;
@@ -265,7 +249,6 @@ button {
     text-align: center;
     outline: none;
     width: 100%
-    /* box-shadow: 0px 3px 0px 0px rgba(173, 173, 173, 0.75); */
 }
 
 button:hover {
