@@ -33,12 +33,23 @@
     <link rel="stylesheet" href="../css/svg.css">
     <link rel="stylesheet" href="../css/navbar/navbar.css">
     <link rel="stylesheet" href="../css/section/section.css">
+    <link rel="stylesheet" href="../css/modal/modal.css">
 
     <!-- website's title -->
     <title>my-privacy.online</title>
 </head>
 
 <body>
+    <div class="modal active" id="modal">
+        <div class="modal_header">
+            <div class="modal_title">Terms of use</div>
+        </div>
+        <div class="modal_body">
+            All statements, information, and recommendations are believed to be accurate but are presented without warranty of any kind, express or implied.
+            <button onclick="accept_terms_of_use()" class="modal_button">Accept</button>
+        </div>
+    </div>
+    <div id="overlay" class="active"></div>
     <header class="header">
         <nav class="nav">
             <div>
@@ -422,6 +433,7 @@
         <ins class="adsbycontextcue" data-cc-site="815dcbe8-265c-4de0-97bb-873b9deea2ef" data-cc-slot="0EHiwyZrr" style="width:336px;height:280px;"></ins>
     </div>
     <script src="../js/script.js"></script>
+    <script src="../js/modal.js"></script>
 </body>
 
 </html>

@@ -232,7 +232,7 @@ div.svg-div svg {
     margin-bottom: 60px;
 }
 
-button {
+button.button {
     padding: 1vmin;
     border: none;
     border-radius: 10px;
@@ -251,7 +251,7 @@ button {
     width: 100%
 }
 
-button:hover {
+button.button:hover {
     background-color: #407088;
 }
 
