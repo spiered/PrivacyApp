@@ -1,0 +1,18 @@
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: #333333;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+header.header {
+    width: 100%;
+    background: #d9adad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+}

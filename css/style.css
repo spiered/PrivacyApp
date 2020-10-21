@@ -1,31 +1,9 @@
-html {
-    scroll-behavior: smooth;
-}
-
 div.svg-div {
     margin: 7.5px;
 }
 
 .services {
     flex-wrap: wrap;
-}
-
-* {
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-    font-size: 16px;
-    background-color: #68b0ab81;
-    font-family: 'Poppins', sans-serif;
 }
 
 img {
@@ -37,21 +15,8 @@ ins {
     margin: 10px;
 }
 
-.title {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    font-size: 40px;
-    color: #333333;
-    letter-spacing: 1.5px;
-    margin-top: 0;
-}
-
 main.main {
     width: 70%;
-    border-radius: 10px;
-}
-
-header {
     border-radius: 10px;
 }
 
@@ -134,11 +99,6 @@ div.form div i:hover {
 i.goodbye {
     display: none;
     color: red;
-}
-
-main.main div.form label {
-    font-size: 12px;
-    color: #525252;
 }
 
 .tab {
@@ -327,126 +287,10 @@ button:hover {
     box-shadow: 0px 3px 4px 0px rgba(176, 189, 221, 0.692);
 }
 
-.brand-name {
+.brand_name {
     font-size: 14px;
     font-weight: 300;
     color: rgb(139, 139, 139);
-}
-
-svg#google {
-    fill: #4285f4;
-}
-
-svg#amazon {
-    fill: #ff9900;
-}
-
-svg#apple {
-    fill: #999999;
-}
-
-svg#facebook {
-    fill: #1877f2;
-}
-
-svg#instagram {
-    fill: #5851db;
-}
-
-svg#snapchat {
-    fill: #fffc00;
-}
-
-svg#twitter {
-    fill: #1da1f2;
-}
-
-svg#tinder {
-    fill: #fe3c72;
-}
-
-svg#paypal {
-    fill: #00457c;
-}
-
-svg#microsoft {
-    fill: #00A4EF;
-}
-
-svg#evernote {
-    fill: #00a82d;
-}
-
-svg#trello {
-    fill: #0079bf;
-}
-
-svg#lastpass {
-    fill: #d32d27;
-}
-
-svg#todoist {
-    fill: #e44332;
-}
-
-svg#skype {
-    fill: #00aff0;
-}
-
-svg#mozilla-org {
-    fill: #ff7139;
-}
-
-svg#twitch {
-    fill: #9146ff;
-}
-
-svg#reddit {
-    fill: #ff4500;
-}
-
-svg#netflix {
-    fill: #e50914;
-}
-
-svg#cnn {
-    fill: #cc0000;
-}
-
-svg#crunchyroll {
-    fill: #f47521;
-}
-
-svg#discord {
-    fill: #7289da;
-}
-
-svg#hulu {
-    fill: #3dbb3d;
-}
-
-svg#deezer {
-    fill: #feaa2d;
-}
-
-svg#lastdotfm {
-    fill: #d51007;
-}
-
-svg#spotify {
-    fill: #1ed760;
-}
-
-svg#soundcloud {
-    fill: #ff3300;
-}
-
-svg#google2 {
-    fill: #FF0000;
-}
-
-svg#apple2 {
-    fill: #FB5BC5;
 }
 
 #myDiv {
@@ -464,6 +308,9 @@ svg#apple2 {
 .a-button {
     width: 100%;
 }
+
+
+/* responsive design: mobile devices */
 
 @media only screen and (max-width: 650px) {
     main.main {

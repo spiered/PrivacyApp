@@ -1,19 +1,5 @@
 let services_selected = [];
 let count = 0;
-// function select(id) {
-//     let element = document.getElementById(id);
-//     element.parentNode.classList.toggle("selected");
-//     element.parentNode.classList.toggle("hover-effect");
-//     if (services_selected.includes(id)) {
-//         for (let i = 0; i < services_selected.length; i++) {
-//             if (services_selected[i] === id) {
-//                 services_selected.splice(i, 1);
-//             }
-//         }
-//     } else {
-//         services_selected.push(id)
-//     }
-// }
 
 function select_div(classe) {
     let className = classe.split(" ")[0];
@@ -144,15 +130,9 @@ function search(text) {
 let all_grades = {};
 
 function generateGradings() {
-    //document.getElementById("response").innerHTML = "";
     var gradings = {};
     var elements = services_selected;
     var sites = [];
-    //if (services_selected == 0) {
-    //    document.getElementById("response").style.padding = 0;
-    //} else {
-    //    document.getElementById("response").style.padding = "20px";
-    //}
     for (let i = 0; i < elements.length; i++) {
         element = elements[i];
         var service = element;

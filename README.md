@@ -6,11 +6,11 @@ We will be monetizing this site by requesting to become a publisher of [EthicalA
 UX flow: 
 1. The user checks the boxes corresponding to the services he uses and clicks the submit button
 
-![showcase image of the website](./showcase.png)
+![showcase image of the website](./img/readme_img/showcase.png)
 
 2. Using the TOSDR API we return a result screen with an easily understandable representation of the user's results with graphs.
 
-![showcase image of the website](./showcase-result.png)
+![showcase image of the website](./img/readme_img/results.png)
 
 Roadmap: https://trello.com/b/CPzva9dm/privacyapp-roadmap
 
@@ -20,4 +20,4 @@ Team:
 
 Find more information in our Instagram Account: [great___tech](https://www.instagram.com/great___tech/).
 
-![Instagram Account Nametag](./great___tech_nametag.png)
+![Instagram Account Nametag](./img/readme_img/nametag.png)
