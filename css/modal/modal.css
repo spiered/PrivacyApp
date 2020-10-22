@@ -68,3 +68,15 @@
     opacity: 1;
     pointer-events: all;
 }
+
+@media only screen and (max-width: 650px) {
+    .modal {
+        max-width: 90%;
+    }
+    .modal_header {
+        padding: 20px;
+    }
+    .modal_body {
+        padding: 20px;
+    }
+}
